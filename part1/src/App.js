@@ -33,11 +33,11 @@ const App = () => {
     )
   }
 
-  const Content = (props) => {
+  const Content = ({parts}) => {
     return(
       <div>
         {
-          props.parts.map(part => (
+          parts.map(part => (
             <Part name={part.name} exercises={part.exercises} />
           ))
         }
@@ -45,9 +45,9 @@ const App = () => {
     )
   }
 
-  const Total = (props) => {
+  const Total = ({parts}) => {
     let total = 0
-    props.parts.map(part => total += part.exercises)
+    parts.map(part => total += part.exercises)
 
     return(
       <p><b>
